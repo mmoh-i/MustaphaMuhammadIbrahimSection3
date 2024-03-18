@@ -1,0 +1,10 @@
+def get_guess(already_guessed):
+  """Gets a guess from the player, ensuring it's a valid letter and hasn't been guessed before."""
+  while True:
+    guess = input("Guess a letter: ").lower()
+    if len(guess) != 1 or not guess.isalpha():
+      print("Invalid guess. Please enter a single letter.")
+    elif guess in already_guessed:
+      print("You already guessed that letter. Try again.")
+    else:
+      return guess
